@@ -33,13 +33,13 @@ function render() {
           ${book.description}
         </p>
         <p>
-          Number of pages  ${book.pages}
+          Number of pages:  ${book.pages}
         </p>
 
         
       </div>
       <div class="book-footer">
-        <p class="read-status">${book.read ? "Read" : "Not read Yet"}</p>
+        <button class="readToggle" onClick = "toggleRead(${i})">${book.read ? "Read" : "Not read Yet"}</button>
         <button class="remove" onClick = "remove(${i})">Remove</button>
       </div>
     `
@@ -54,6 +54,15 @@ function Book(image, title, author, description, pages, read ) {
   this.description = description;
   this.pages = pages;
   this.read = read;
+}
+
+Book.prototype.toggleRead = function(){
+  this.read = !this.read;
+}
+
+function toggleRead(index) {
+  books[index].toggleRead();
+  render();
 }
 
 function addBook(){
@@ -73,3 +82,4 @@ function remove(index){
   books.splice(index, 1);
   render();
 }
+

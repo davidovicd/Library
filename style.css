@@ -15,6 +15,7 @@ button{
   display: block;
   font-weight: 900;
   margin: 20px auto;
+  border-radius: 10px;
 }
 
 .newBook {
@@ -45,6 +46,56 @@ fieldset{
 .hidden {
   display: none;
 }
+
+.library {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 50px;
+}
+
+.book{
+  border: 3px solid #000;
+}
+
+.book-image {
+  padding: 10px;
+}
+
+.book-image img {
+  display: block;
+  margin: 20px auto;
+  height: 300px;
+}
+
+.book-header {
+  margin: 30px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 30px;
+}
+
+.book-content {
+  width: 80%;
+  margin: 10px 30px;
+}
+
+.book-content p {
+  margin-top: 20px;
+}
+
+.book-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 30px;
+}
+
+.remove {
+  background-color: #9b2f2f;
+  color: #fff;
+  padding: 10px 20px;
+}
+
 
 
 
